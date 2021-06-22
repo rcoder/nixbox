@@ -11,7 +11,7 @@ include REXML
 
 isos = {}
 
-xml = Document.new(open("https://nixos.org/nixos/download.html"))
+xml = Document.new(URI.open("https://nixos.org/nixos/download.html"))
 xml.root.elements.each("body/*/*/*/*/*/ul/li") { |li|
   hrefs = li.get_elements("a").map { |a| a.attribute("href") }
   if hrefs.size == 2 and /.*minimal.*/i =~ hrefs[0].value

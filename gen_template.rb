@@ -54,8 +54,8 @@ def gen_template(
 
   puts JSON.pretty_generate(
     variables: {
-      disk_size: '10240',
-      memory: '1024',
+      disk_size: '20480',
+      memory: '4096',
     },
     builders: [
       builder(
